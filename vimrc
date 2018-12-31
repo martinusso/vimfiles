@@ -5,7 +5,7 @@ set nocompatible           " disables compatibility with legacy vi
 
 " font
 if has('unix')
-  set guifont=Monaco\ for\ Powerline\ Normal\ 13
+	set guifont=
 else
 	set guifont=Consolas:h12
 	set enc=utf-8
@@ -70,6 +70,15 @@ colorscheme onedark
 set autoread            " Automatically read files which have been changed outside of Vim
 set backspace=indent,eol,start " make backspace behave in a sane manner
 set number
+
+"some stuff to get the mouse going in term
+set mouse=a
+if !has("nvim")
+    set ttymouse=xterm2
+endif
+
+"hide buffers when not displayed
+set hidden
 
 " search
 set incsearch
