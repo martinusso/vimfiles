@@ -70,6 +70,7 @@ colorscheme onedark
 set autoread            " Automatically read files which have been changed outside of Vim
 set backspace=indent,eol,start " make backspace behave in a sane manner
 set number
+set relativenumber
 
 "some stuff to get the mouse going in term
 set mouse=a
@@ -94,6 +95,7 @@ set softtabstop=2
 set autoindent
 set smartindent
 set showmatch
+set expandtab
 
 " use the system clipboard
 if has('unix')
@@ -114,11 +116,6 @@ set wildmenu                            " use wildmenu
 set wildcharm=<TAB>
 set wildmode=list:longest               " make cmdline completion similar to bash
 set wildignore=*.o,*.sw*,*.pyc,*.bak,*~ " stuff to ignore when tab completing
-
-" Use spaces for
-autocmd FileType php set expandtab
-autocmd FileType python set expandtab
-autocmd FileType ruby set expandtab
 
 
 " Map Ctrl + t to tooggle NERDTree
