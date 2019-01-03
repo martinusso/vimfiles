@@ -19,11 +19,15 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+
 " golang
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
@@ -70,7 +74,9 @@ let NERDTreeShowHidden=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_go_checkers=['']
+let g:syntastic_go_checkers = ['']
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_python_checkers = ['pylint']
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -111,8 +117,8 @@ if !has("nvim")
     set ttymouse=xterm2
 endif
 
-"hide buffers when not displayed
-set hidden
+set autowrite        " Automatically save before :next, :make etc
+set hidden           "hide buffers when not displayed
 
 set completeopt=menu,longest
 setlocal omnifunc=go#complete#Complete
@@ -169,6 +175,9 @@ augroup END
 
 augroup go
   autocmd!
+  autocmd FileType go nmap <silent> <Leader>v <Plug>(go-def-vertical)
+  autocmd FileType go nmap <silent> <Leader>s <Plug>(go-def-split)
+  autocmd FileType go nmap <silent> <Leader>d <Plug>(go-def-tab)
 
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
 
