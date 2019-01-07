@@ -66,7 +66,7 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 map <C-\> :NERDTreeToggle<CR>
 noremap <Leader>n :NERDTreeToggle<cr>
 noremap <Leader>f :NERDTreeFind<cr>
-
+let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.swp$', '\~$']
 let NERDTreeShowHidden=1
 
 """ Syntastic
@@ -226,3 +226,25 @@ map tp :tabprevious<CR>
 map tt :tabnew<CR>
 
 map <C-z> <Nop>
+
+" Working with buffers
+" go to next buffer
+noremap <C-S-j> :bnext<CR>
+inoremap <C-S-j> <ESC>:bnext<CR>
+noremap <C-S-l> :bnext<CR>
+inoremap <C-S-l> <ESC>:bnext<CR>
+" go to previous buffer
+noremap <C-S-h> :bprev<CR>
+inoremap <C-S-h> <ESC>:bprev<CR>
+noremap <C-S-k> :bprev<CR>
+inoremap <C-S-k> <ESC>:bprev<CR>
+" delete a buffer (close a file)
+noremap <C-q> :q!<CR>
+inoremap <C-q> <ESC>:q!<CR>
+
+" Quit a window
+inoremap <C-w>q <ESC><C-w>q<CR>
+
+" BufExplorer
+nmap <C-b> :BufExplorer<CR>
+imap <C-b> <ESC>:BufExplorer<CR>
