@@ -1,0 +1,59 @@
+snippet im "import"
+import (
+	"${1:package}"
+)
+endsnippet
+
+snippet ir "if error not nil, return err"
+if err != nil {
+	return err
+}
+${0}
+endsnippet
+
+snippet fori "for int loop"
+for ${2:i} := 0; $2 < ${1:count}; $2${3:++} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet forr "for range loop"
+for ${1:e} := range ${2:collection} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet fun "function"
+func ${1:funcName}(${2}) ${3:error} {
+	${4}
+}
+${0}
+endsnippet
+
+snippet getset "get and set"
+func (${1:o} ${2:structName}) ${3:funcName}() ${4:type} {
+	return $1.${5:propName}
+}
+
+func ($1 *$2) Set$3($5 $4) {
+	$1.$5 = $5
+}
+${0}
+endsnippet
+
+snippet testclass "test class"
+package ${1}
+
+import (
+	"testing"
+)
+
+func TestMethodName(t *testing.T) {
+	if err != nil {
+		t.Errorf("There should not be an error, error: %s", err)
+	}
+	if got != expected {
+		t.Errorf("Expected '%s' got '%s'", expected, got)
+	}
+}
+endsnippet
