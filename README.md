@@ -32,3 +32,7 @@ install plugins
 ```
 vim +PlugInstall
 ```
+
+## dependencies
+
+- https://github.com/ggreer/the_silver_searcher
