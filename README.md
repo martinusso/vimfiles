@@ -35,4 +35,5 @@ vim +PlugInstall
 
 ## dependencies
 
+- https://github.com/Valloric/YouCompleteMe
 - https://github.com/ggreer/the_silver_searcher

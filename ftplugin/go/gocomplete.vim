@@ -1,1 +1,1 @@
-/home/breno.martinusso/.vim/plugged/gocode/vim/ftplugin/go/gocomplete.vim
+/home/breno/.vim/plugged/gocode/vim/ftplugin/go/gocomplete.vim
