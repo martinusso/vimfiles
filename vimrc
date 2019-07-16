@@ -105,7 +105,7 @@ let NERDTreeShowHidden=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_go_checkers = ['']
+let g:syntastic_go_checkers = ['go', 'golint', 'govet']
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_python_checkers = ['pylint']
 
@@ -212,6 +212,12 @@ augroup filetypedetect
   autocmd FileType json setlocal expandtab shiftwidth=2 tabstop=2
 augroup END
 
+" golang
+"
+"set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+"
+"autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
 augroup go
   autocmd!
   autocmd FileType go nmap <silent> <Leader>v <Plug>(go-def-vertical)
@@ -255,6 +261,7 @@ inoremap <A-UP> <esc>:m-2<cr>==gi
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 
+nnoremap <CapsLock> <ESC>
 " Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
