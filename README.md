@@ -33,6 +33,8 @@ install plugins
 vim +PlugInstall
 ```
 
+Or open vim editor and type `:PlugInstall`
+
 ## dependencies
 
 - https://github.com/Valloric/YouCompleteMe
