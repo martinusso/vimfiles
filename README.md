@@ -1,5 +1,11 @@
 # vimfiles
 
+## dependencies
+
+- install `gvim` instead of `vim`
+- https://github.com/Valloric/YouCompleteMe
+- https://github.com/ggreer/the_silver_searcher
+
 ## install
 
 go to your HOME:
@@ -34,8 +40,3 @@ vim +PlugInstall
 ```
 
 Or open vim editor and type `:PlugInstall`
-
-## dependencies
-
-- https://github.com/Valloric/YouCompleteMe
-- https://github.com/ggreer/the_silver_searcher
