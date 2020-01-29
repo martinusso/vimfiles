@@ -2,7 +2,7 @@
 
 ## dependencies
 
-- install `gvim` instead of `vim`
+- [neovim](https://github.com/neovim/neovim) or `gvim` (instead of `vim`)
 - https://github.com/Valloric/YouCompleteMe
 - https://github.com/ggreer/the_silver_searcher
 
@@ -14,29 +14,19 @@ go to your HOME:
 cd ~
 ```
 
-clone vimfiles repo
+### neovim
 
 ```
-git clone git@github.com:martinusso/vimfiles.git
+git clone git@github.com:martinusso/vimfiles.git {$HOME}/.config/nvim
+nvim +PlugInstall
 ```
 
-rename the dir `vimfiles` to `.vim`
+Or open neovim/vim editor and type `:PlugInstall`
+
+### vim
 
 ```
-mv vimfiles .vim
-```
-
-link `vimrc` and `gvimrc` to yout home
-
-```
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/gvimrc ~/.gvimrc
-```
-
-install plugins
-
-```
+git clone git@github.com:martinusso/vimfiles.git {$HOME}/.vim
+echo "source ${HOME}/.vim/init.vim" > ${HOME}/.vimrc
 vim +PlugInstall
 ```
-
-Or open vim editor and type `:PlugInstall`
