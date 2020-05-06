@@ -49,6 +49,14 @@ import (
 )
 
 func TestMethodName(t *testing.T) {
+	mockCtrl := gomock.NewController(t)
+	defer mockCtrl.Finish()
+
+	mockRepo := NewMockRepository(mockCtrl)
+	mockRepo.EXPECT().List(accountID, params).Return(activitiesFixture(), nil)
+
+	mockLogger := logger.NewMockLogger(mockCtrl)
+
 	if err != nil {
 		t.Errorf("There should not be an error, error: %s", err)
 	}

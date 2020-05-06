@@ -16,7 +16,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
-Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -26,6 +25,8 @@ Plug 'Valloric/YouCompleteMe'
 
 " golang
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+
+Plug 'sheerun/vim-polyglot'
 
 " html
 Plug 'hail2u/vim-css3-syntax'
@@ -111,7 +112,8 @@ let NERDTreeShowHidden=1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+"let g:syntastic_go_checkers = ['go', 'golint', 'govet']
+let g:syntastic_go_checkers = ['go', 'govet']
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_python_checkers = ['pylint']
 
@@ -135,13 +137,27 @@ set laststatus=2 " always displays de airline bar
 
 """ vim-go
 """"""""""
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_command = "goimports"
+
+let g:go_null_module_warning = 0
+let g:go_echo_command_info = 1
+
+let g:go_autodetect_gopath = 1
+"let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+"let g:go_metalinter_enabled = ['vet', 'golint']
+"let g:go_metalinter_flags = ["--exclude=\"\bexported \\w+ (\\S*['.]*)([a-zA-Z'.*]*) should have comment or be unexported\b\""]
+
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
-let g:go_fmt_command = "goimports"
+
+""" HTML
+""""""""""""""""
+let g:user_emmet_leader_key=','
 
 
 """ Color Scheme
