@@ -30,3 +30,8 @@ git clone git@github.com:martinusso/vimfiles.git {$HOME}/.vim
 echo "source ${HOME}/.vim/init.vim" > ${HOME}/.vimrc
 vim +PlugInstall
 ```
+
+
+### vim-go
+
+vim-go seems to be the most popular Vim plugin for working with go, so that’s what we’ll use. Follow the installation instructions (or fetch and add to your runtimepath). Open a new Vim instance and run `:GoInstallBinaries` to get the necessary go tools we’ll need.
